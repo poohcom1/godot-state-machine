@@ -16,6 +16,18 @@ public class StateMachineLike
 
 2. Initialize all the required states in the constructor using the State's public constructors or `State.Builder`.
 
+```csharp
+State idle = State.Builder
+    .Create("Idle") // Pass a string to name the state. Useful for storing sprite/animation names
+    .OnPerform(delta => {
+      // Action on idle
+    })
+    .OnEntry(() => {
+      // Action when the state started
+    })
+    .Build();
+```
+
 3. Initialize all transitions using the contructor or `Transition.Builder`.
 
 4. Connect states using `State.SetTransitions()`
