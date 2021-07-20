@@ -3,7 +3,7 @@ namespace StateMachine.GodotStates {
         readonly protected Receiver receiver;
         protected string signal;
 
-        protected SignalTransition(State next, string signal, Godot.Object sender) : base(next, s => false, State.NO_EVENT) {
+        public SignalTransition(State next, string signal, Godot.Object sender) : base(next, s => false, State.NO_EVENT) {
             this.signal = signal;
             this.receiver = new Receiver();
 
